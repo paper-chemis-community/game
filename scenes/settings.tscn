@@ -32,6 +32,26 @@ offset_bottom = 81.0
 theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 24
 
+[node name="IPBeginSetting" type="Node2D" parent="."]
+position = Vector2(-1, 94)
+
+[node name="IPBeginSetLabel" type="Label" parent="IPBeginSetting"]
+offset_left = 45.0
+offset_top = 28.0
+offset_right = 193.0
+offset_bottom = 90.0
+theme_override_fonts/font = ExtResource("2_6wm04")
+theme_override_font_sizes/font_size = 30
+text = "自动识别IP地址的起始部分"
+
+[node name="LineEdit" type="LineEdit" parent="IPBeginSetting"]
+offset_left = 424.0
+offset_top = 18.0
+offset_right = 874.0
+offset_bottom = 81.0
+theme_override_fonts/font = ExtResource("2_6wm04")
+theme_override_font_sizes/font_size = 24
+
 [node name="SaveButton" type="Button" parent="."]
 offset_left = 56.0
 offset_top = 520.0

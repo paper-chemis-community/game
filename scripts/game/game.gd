@@ -4,7 +4,7 @@ func _ready() -> void:
 	init()
 
 func init() -> void:
-	if MultiGame.isServer:
+	if multiplayer.is_server():
 		$IsServerLabel.text = "房间运行中：您是房主"
 	else:
 		$IsServerLabel.text = "房间运行中：您是房客"
@@ -12,6 +12,6 @@ func init() -> void:
 	var addresses: PackedStringArray = IP.get_local_addresses()
 	var ipaddress: String = ""
 	for address in addresses:
-		if address.substr(0, 8) == "192.168.":
+		if address.substr(0, GameManager.ip_begin.length()) == GameManager.ip_begin:
 			ipaddress = address
 	$IPLabel.text = ipaddress
