@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 MultiGame="*res://scripts/autoload/MultiGame.gd"
+SceneManager="*res://scripts/autoload/SceneManager.gd"
+GameManager="*res://scripts/autoload/GameManager.gd"
 
 [rendering]
 
