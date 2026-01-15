@@ -14,6 +14,7 @@ offset_bottom = 694.0
 color = Color(0.7058824, 0.6862745, 0, 1)
 
 [node name="DataSetting" type="Node2D" parent="."]
+metadata/_edit_group_ = true
 
 [node name="DataSetLabel" type="Label" parent="DataSetting"]
 offset_left = 45.0
@@ -34,6 +35,7 @@ theme_override_font_sizes/font_size = 24
 
 [node name="IPBeginSetting" type="Node2D" parent="."]
 position = Vector2(-1, 94)
+metadata/_edit_group_ = true
 
 [node name="IPBeginSetLabel" type="Label" parent="IPBeginSetting"]
 offset_left = 45.0
@@ -45,6 +47,27 @@ theme_override_font_sizes/font_size = 30
 text = "自动识别IP地址的起始部分"
 
 [node name="LineEdit" type="LineEdit" parent="IPBeginSetting"]
+offset_left = 424.0
+offset_top = 18.0
+offset_right = 874.0
+offset_bottom = 81.0
+theme_override_fonts/font = ExtResource("2_6wm04")
+theme_override_font_sizes/font_size = 24
+
+[node name="UsernameSetting" type="Node2D" parent="."]
+position = Vector2(0, 208)
+metadata/_edit_group_ = true
+
+[node name="UsernameSetLabel" type="Label" parent="UsernameSetting"]
+offset_left = 45.0
+offset_top = 28.0
+offset_right = 193.0
+offset_bottom = 90.0
+theme_override_fonts/font = ExtResource("2_6wm04")
+theme_override_font_sizes/font_size = 30
+text = "局内显示昵称"
+
+[node name="LineEdit" type="LineEdit" parent="UsernameSetting"]
 offset_left = 424.0
 offset_top = 18.0
 offset_right = 874.0
