@@ -1,8 +1,5 @@
 extends Node
 
-func _ready() -> void:
-	print(OS.get_user_data_dir())
-
 func create_file(file_path: String) -> void:
 	var base_dir = file_path.get_base_dir()
 	if !DirAccess.dir_exists_absolute(base_dir):
@@ -22,8 +19,8 @@ func download_file(server_path: String, local_path: String) -> void:
 func download_defs(type: String, origin: String) -> void:
 	var list_file = FileAccess.open("user://download/source/%ss/list.json" % [type], FileAccess.READ)
 	var list_text = list_file.get_as_text()
-	print(list_text)
 	var list = JSON.parse_string(list_text)
+	list_file.close()
 	if !list:
 		return
 	for k in list:
@@ -33,8 +30,8 @@ func download_defs(type: String, origin: String) -> void:
 func download_assets(origin: String) -> void:
 	var list_file = FileAccess.open("user://download/source/assets/list.json", FileAccess.READ)
 	var list_text = list_file.get_as_text()
-	print(list_text)
 	var list = JSON.parse_string(list_text)
+	list_file.close()
 	if !list:
 		return
 	for k in list["pics"]:
@@ -72,4 +69,20 @@ func download_from_origin() -> int:
 	return 0
 
 func load_resource():
-	pass
+	var card_file = FileAccess.open("user://download/source/cards/list.json", FileAccess.READ)
+	GameManager.card_list = JSON.parse_string(card_file.get_as_text())
+	card_file.close()
+
+	var reaction_file = FileAccess.open("user://download/source/reactions/list.json", FileAccess.READ)
+	GameManager.reaction_list = JSON.parse_string(reaction_file.get_as_text())
+	reaction_file.close()
+
+	var matter_file = FileAccess.open("user://download/source/matters/list.json", FileAccess.READ)
+	GameManager.matter_list = JSON.parse_string(matter_file.get_as_text())
+	matter_file.close()
+
+	var asset_file = FileAccess.open("user://download/source/assets/list.json", FileAccess.READ)
+	var asset_list = JSON.parse_string(asset_file.get_as_text())
+	GameManager.pic_list = asset_list["pics"]
+	GameManager.sound_list = asset_list["sounds"]
+	asset_file.close()
