@@ -14,3 +14,7 @@ func _on_save_button_pressed() -> void:
 
 func _on_cancel_button_pressed() -> void:
 	SceneManager.goto_scene("main_menu")
+
+
+func _on_download_button_pressed() -> void:
+	pass # Replace with function body.

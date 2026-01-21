@@ -20,6 +20,12 @@ config/icon="res://icon.svg"
 MultiGame="*res://scripts/autoload/MultiGame.gd"
 SceneManager="*res://scripts/autoload/SceneManager.gd"
 GameManager="*res://scripts/autoload/GameManager.gd"
+DownloadManager="*res://scripts/autoload/DownloadManager.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [rendering]
 
