@@ -46,8 +46,9 @@ text = "加入局域网游戏"
 
 [node name="CreateGameUI" type="Node2D" parent="."]
 visible = false
-position = Vector2(316, 203)
+position = Vector2(585, 355)
 script = ExtResource("3_bqqt6")
+metadata/_edit_group_ = true
 
 [node name="Background" type="ColorRect" parent="CreateGameUI"]
 offset_right = 475.0
@@ -106,7 +107,7 @@ horizontal_alignment = 1
 
 [node name="JoinGameUI" type="Node2D" parent="."]
 visible = false
-position = Vector2(328, 216)
+position = Vector2(585, 355)
 script = ExtResource("4_wu84c")
 metadata/_edit_group_ = true
 

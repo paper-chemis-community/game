@@ -16,4 +16,9 @@ func init() -> void:
 			ipaddress = address
 	$IPLabel.text = ipaddress
 	$Player1/Username.text = GameManager.username
-	
+
+func new_card(card_name: String):
+	var card = SceneManager.Card.new()
+	add_child(card)
+	card.set_texture(GameManager.pic_list[card_name])
+	return card
