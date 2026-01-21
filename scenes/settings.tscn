@@ -107,6 +107,9 @@ offset_left = 711.0
 offset_top = 913.0
 offset_right = 1738.0
 offset_bottom = 966.0
+theme_override_fonts/font = ExtResource("2_6wm04")
+theme_override_font_sizes/font_size = 50
+text = "提示：无"
 
 [connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="DownloadButton" to="." method="_on_download_button_pressed"]

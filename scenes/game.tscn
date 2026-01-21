@@ -14,19 +14,41 @@ offset_bottom = 1167.0
 color = Color(0.7058824, 0.6862745, 0, 1)
 
 [node name="IsServerLabel" type="Label" parent="."]
-offset_left = 30.0
-offset_top = 11.0
-offset_right = 227.0
-offset_bottom = 59.0
+offset_left = 58.0
+offset_top = 15.0
+offset_right = 255.0
+offset_bottom = 63.0
 theme_override_fonts/font = ExtResource("1_uwrxv")
 theme_override_font_sizes/font_size = 20
 text = "啊啊啊啊啊：啊啊啊啊"
 
 [node name="IPLabel" type="Label" parent="."]
-offset_left = 1742.0
-offset_top = 14.0
-offset_right = 1844.0
-offset_bottom = 59.0
+offset_left = 54.0
+offset_top = 53.0
+offset_right = 156.0
+offset_bottom = 98.0
 theme_override_fonts/font = ExtResource("1_uwrxv")
 theme_override_font_sizes/font_size = 24
 text = "127.0.0.2"
+
+[node name="Player1" type="Node2D" parent="."]
+
+[node name="Username" type="Label" parent="Player1"]
+offset_left = 57.0
+offset_top = 1003.0
+offset_right = 539.0
+offset_bottom = 1061.0
+theme_override_fonts/font = ExtResource("1_uwrxv")
+theme_override_font_sizes/font_size = 35
+text = "Player1"
+
+[node name="Player2" type="Node2D" parent="."]
+
+[node name="Username" type="Label" parent="Player2"]
+offset_left = 1446.0
+offset_top = 15.0
+offset_right = 1928.0
+offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("1_uwrxv")
+theme_override_font_sizes/font_size = 35
+text = "Player2"
