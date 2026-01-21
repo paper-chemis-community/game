@@ -14,27 +14,27 @@ game/
 - project.godot
 - icon.svg
 - assets/
-    - fonts/
-        - AlibabaPuHuiTi-3-65-Medium.ttf    # 阿里巴巴普惠体
-    - pics/
+	- fonts/
+		- AlibabaPuHuiTi-3-65-Medium.ttf    # 阿里巴巴普惠体
+	- pics/
 - scenes
-    - main_menu.tscn
-    - game.tscn
-    - settings.tscn
+	- main_menu.tscn
+	- game.tscn
+	- settings.tscn
 - scripts/
-    - autoload/
-        - GameManager.gd        # 游戏管理
-        - DownloadManager.gd    # 下载管理
-        - MultiGame.gd          # 多人游戏功能
-        - SceneManager.gd       # 场景管理
-    - main_menu/
-        - main_menu.gd
-        - join_game_ui.gd
-        - create_game_ui.gd
-    - game/
-        - game.gd
-    - settings/
-        - settings.gd
+	- autoload/
+		- GameManager.gd        # 游戏管理
+		- DownloadManager.gd    # 下载管理
+		- MultiGame.gd          # 多人游戏功能
+		- SceneManager.gd       # 场景管理
+	- main_menu/
+		- main_menu.gd
+		- join_game_ui.gd
+		- create_game_ui.gd
+	- game/
+		- game.gd
+	- settings/
+		- settings.gd
 ```
 
 ## 如何运行

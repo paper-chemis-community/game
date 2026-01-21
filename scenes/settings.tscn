@@ -76,19 +76,19 @@ theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 24
 
 [node name="SaveButton" type="Button" parent="."]
-offset_left = 89.0
-offset_top = 902.0
-offset_right = 253.0
-offset_bottom = 979.0
+offset_left = 93.0
+offset_top = 913.0
+offset_right = 257.0
+offset_bottom = 990.0
 theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 30
 text = "保存设置"
 
 [node name="DownloadButton" type="Button" parent="."]
-offset_left = 495.0
-offset_top = 912.0
-offset_right = 671.0
-offset_bottom = 1001.0
+offset_left = 493.0
+offset_top = 905.0
+offset_right = 669.0
+offset_bottom = 994.0
 theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 30
 text = "下载文件"
@@ -101,6 +101,12 @@ offset_bottom = 995.0
 theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 30
 text = "取消"
+
+[node name="Tips" type="Label" parent="."]
+offset_left = 711.0
+offset_top = 913.0
+offset_right = 1738.0
+offset_bottom = 966.0
 
 [connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="DownloadButton" to="." method="_on_download_button_pressed"]

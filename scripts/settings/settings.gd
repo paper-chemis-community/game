@@ -17,4 +17,11 @@ func _on_cancel_button_pressed() -> void:
 
 
 func _on_download_button_pressed() -> void:
-	pass # Replace with function body.
+	$Tips.text = "提示：已开始下载，请勿关闭设置页面"
+	var result: int = DownloadManager.download_from_origin()
+	if result == 1:
+		$Tips.text = "提示：下载失败。数据源路径错误"
+	$Tips.text = "提示：正在加载资源，请勿关闭设置页面"
+	DownloadManager.load_resource()
+	$Tips.text = "提示：完成加载"
+	
