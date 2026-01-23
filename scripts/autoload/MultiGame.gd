@@ -1,6 +1,5 @@
 extends Node
 
-
 # 基于 ENet 多人游戏
 
 func create_server(player_num: int) -> void:
