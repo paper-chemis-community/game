@@ -1,22 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxbycggrcmo3q"]
+[gd_scene format=3 uid="uid://bxbycggrcmo3q"]
 
 [ext_resource type="Script" uid="uid://deltvf06kqovt" path="res://scripts/settings/settings.gd" id="1_r6d6q"]
 [ext_resource type="FontFile" uid="uid://c2bipf4tpdjj8" path="res://assets/fonts/AlibabaPuHuiTi-3-65-Medium.ttf" id="2_6wm04"]
 
-[node name="Settings" type="Node2D"]
+[node name="Settings" type="Node2D" unique_id=1528483]
 script = ExtResource("1_r6d6q")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=1213198647]
 offset_left = -34.0
 offset_top = -27.0
 offset_right = 1911.0
 offset_bottom = 1050.0
 color = Color(0.7058824, 0.6862745, 0, 1)
 
-[node name="DataSetting" type="Node2D" parent="."]
+[node name="DataSetting" type="Node2D" parent="." unique_id=700043200]
 metadata/_edit_group_ = true
 
-[node name="DataSetLabel" type="Label" parent="DataSetting"]
+[node name="DataSetLabel" type="Label" parent="DataSetting" unique_id=1130835123]
 offset_left = 45.0
 offset_top = 28.0
 offset_right = 193.0
@@ -25,7 +25,7 @@ theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 30
 text = "数据源设置"
 
-[node name="LineEdit" type="LineEdit" parent="DataSetting"]
+[node name="LineEdit" type="LineEdit" parent="DataSetting" unique_id=34011310]
 offset_left = 217.0
 offset_top = 18.0
 offset_right = 874.0
@@ -33,11 +33,11 @@ offset_bottom = 81.0
 theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 24
 
-[node name="IPBeginSetting" type="Node2D" parent="."]
+[node name="IPBeginSetting" type="Node2D" parent="." unique_id=1428256194]
 position = Vector2(-1, 94)
 metadata/_edit_group_ = true
 
-[node name="IPBeginSetLabel" type="Label" parent="IPBeginSetting"]
+[node name="IPBeginSetLabel" type="Label" parent="IPBeginSetting" unique_id=561890346]
 offset_left = 45.0
 offset_top = 28.0
 offset_right = 193.0
@@ -46,7 +46,7 @@ theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 30
 text = "自动识别IP地址的起始部分"
 
-[node name="LineEdit" type="LineEdit" parent="IPBeginSetting"]
+[node name="LineEdit" type="LineEdit" parent="IPBeginSetting" unique_id=1179342188]
 offset_left = 424.0
 offset_top = 18.0
 offset_right = 874.0
@@ -54,11 +54,11 @@ offset_bottom = 81.0
 theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 24
 
-[node name="UsernameSetting" type="Node2D" parent="."]
+[node name="UsernameSetting" type="Node2D" parent="." unique_id=564366013]
 position = Vector2(0, 208)
 metadata/_edit_group_ = true
 
-[node name="UsernameSetLabel" type="Label" parent="UsernameSetting"]
+[node name="UsernameSetLabel" type="Label" parent="UsernameSetting" unique_id=1569658441]
 offset_left = 45.0
 offset_top = 28.0
 offset_right = 193.0
@@ -67,7 +67,7 @@ theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 30
 text = "局内显示昵称"
 
-[node name="LineEdit" type="LineEdit" parent="UsernameSetting"]
+[node name="LineEdit" type="LineEdit" parent="UsernameSetting" unique_id=694430941]
 offset_left = 424.0
 offset_top = 18.0
 offset_right = 874.0
@@ -75,16 +75,16 @@ offset_bottom = 81.0
 theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 24
 
-[node name="SaveButton" type="Button" parent="."]
-offset_left = 93.0
-offset_top = 913.0
-offset_right = 257.0
-offset_bottom = 990.0
+[node name="SaveButton" type="Button" parent="." unique_id=1377249836]
+offset_left = 85.0
+offset_top = 912.0
+offset_right = 249.0
+offset_bottom = 989.0
 theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 30
 text = "保存设置"
 
-[node name="DownloadButton" type="Button" parent="."]
+[node name="DownloadButton" type="Button" parent="." unique_id=315804661]
 offset_left = 493.0
 offset_top = 905.0
 offset_right = 669.0
@@ -93,7 +93,7 @@ theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 30
 text = "下载文件"
 
-[node name="CancelButton" type="Button" parent="."]
+[node name="CancelButton" type="Button" parent="." unique_id=135993345]
 offset_left = 286.0
 offset_top = 906.0
 offset_right = 462.0
@@ -102,7 +102,7 @@ theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 30
 text = "取消"
 
-[node name="Tips" type="Label" parent="."]
+[node name="Tips" type="Label" parent="." unique_id=1777076648]
 offset_left = 711.0
 offset_top = 913.0
 offset_right = 1738.0

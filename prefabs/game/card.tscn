@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://croqe86tpmsco"]
+[gd_scene format=3 uid="uid://croqe86tpmsco"]
 
 [ext_resource type="Script" uid="uid://di3cxx8th55lg" path="res://scripts/game/card.gd" id="1_3aeal"]
 
-[node name="Card" type="Node2D"]
+[node name="Card" type="Node2D" unique_id=1826213731]
 script = ExtResource("1_3aeal")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1627492935]
