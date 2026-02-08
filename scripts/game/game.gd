@@ -1,5 +1,9 @@
 extends Node2D
 
+var CardScene = preload("res://prefabs/game/card.tscn")
+
+var card_list: Array
+
 func _ready() -> void:
 	init()
 
@@ -16,3 +20,10 @@ func init() -> void:
 			ipaddress = address
 	$IPLabel.text = ipaddress
 	$Player1/Username.text = GameManager.username
+
+func create_card(card_name: String):
+	var card = CardScene.instantiate()
+	add_child(card)
+	card.set_card(card_name)
+	card_list.append(card)
+	print(card.card_name)
