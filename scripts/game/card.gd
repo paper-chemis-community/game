@@ -9,4 +9,4 @@ func set_texture(pic: String) -> void:
 
 func set_card(cname: String) -> void:
     card_name = cname
-    # set_texture(GameManager.pic_list[card_name])
+    set_texture(GameManager.pic_list[card_name])
