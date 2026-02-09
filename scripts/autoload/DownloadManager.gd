@@ -1,6 +1,6 @@
 extends Node
 
-var uuid: String
+var uuid: String = "source"
 
 func create_file(file_path: String) -> void:
 	var base_dir = file_path.get_base_dir()
@@ -63,10 +63,8 @@ func download_from_origin() -> int:
 
 	if origin[-1] != "/":
 		origin = origin + "/"
-	
-	#download_file(origin + "index", "user://download/temp/index.json")
 
-	# get_uuid()
+	download_file(origin + "index", "user://download/temp/index.json")
 
 	download_file(origin + "card/list", "user://download/%s/cards/list.json" % [uuid])
 	download_file(origin + "reaction/list", "user://download/%s/reactions/list.json" % [uuid])
