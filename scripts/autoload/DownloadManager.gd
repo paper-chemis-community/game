@@ -17,6 +17,7 @@ func download_file(server_path: String, local_path: String) -> void:
 		create_file(file_path)
 	http.download_file = file_path
 	http.request(server_path)
+	await http.request_completed
 
 func get_uuid() -> void:
 	var index_file = FileAccess.open("user://download/temp/index.json", FileAccess.READ)
@@ -34,7 +35,7 @@ func download_defs(type: String, origin: String) -> void:
 		return
 	for k in list:
 		var filename = list[k]
-		download_file("%s%s/id/%s" % [origin, type, k], "user://download/%s/%ss/%s.json" % [uuid, type, filename])
+		await download_file("%s%s/id/%s" % [origin, type, k], "user://download/%s/%ss/%s.json" % [uuid, type, filename])
 
 func download_assets(origin: String) -> void:
 	var list_file = FileAccess.open("user://download/%s/assets/list.json" % [uuid], FileAccess.READ)
@@ -45,10 +46,10 @@ func download_assets(origin: String) -> void:
 		return
 	for k in list["pics"]:
 		var filename = list["pics"][k]
-		download_file("%sasset/pic/%s" % [origin, k], "user://download/%s/assets/pics/%s" % [uuid, filename])
+		await download_file("%sasset/pic/%s" % [origin, k], "user://download/%s/assets/pics/%s" % [uuid, filename])
 	for k in list["sounds"]:
 		var filename = list["sounds"][k]
-		download_file("%sasset/sound/%s" % [origin, k], "user://download/%s/assets/sounds/%s" % [uuid, filename])
+		await download_file("%sasset/sound/%s" % [origin, k], "user://download/%s/assets/sounds/%s" % [uuid, filename])
 
 func download_from_origin() -> int:
 	var origin = GameManager.data_origin
@@ -64,18 +65,18 @@ func download_from_origin() -> int:
 	if origin[-1] != "/":
 		origin = origin + "/"
 
-	download_file(origin + "index", "user://download/temp/index.json")
+	await download_file(origin + "index", "user://download/temp/index.json")
 
-	download_file(origin + "card/list", "user://download/%s/cards/list.json" % [uuid])
-	download_file(origin + "reaction/list", "user://download/%s/reactions/list.json" % [uuid])
-	download_file(origin + "matter/list", "user://download/%s/matters/list.json" % [uuid])
-	download_file(origin + "asset/list", "user://download/%s/assets/list.json" % [uuid])
+	await download_file(origin + "card/list", "user://download/%s/cards/list.json" % [uuid])
+	await download_file(origin + "reaction/list", "user://download/%s/reactions/list.json" % [uuid])
+	await download_file(origin + "matter/list", "user://download/%s/matters/list.json" % [uuid])
+	await download_file(origin + "asset/list", "user://download/%s/assets/list.json" % [uuid])
 	
-	download_defs("card", origin)
-	download_defs("reaction", origin)
-	download_defs("matter", origin)
+	await download_defs("card", origin)
+	await download_defs("reaction", origin)
+	await download_defs("matter", origin)
 	
-	download_assets(origin)
+	await download_assets(origin)
 
 	return 0
 
