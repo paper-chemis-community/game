@@ -31,10 +31,6 @@ DownloadManager="*res://scripts/autoload/DownloadManager.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 
-[network]
-
-tls/enable_tls_v1.3=false
-
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

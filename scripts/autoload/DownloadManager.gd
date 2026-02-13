@@ -67,6 +67,8 @@ func download_from_origin() -> int:
 
 	await download_file(origin + "index", "user://download/temp/index.json")
 
+	get_uuid()
+
 	await download_file(origin + "card/list", "user://download/%s/cards/list.json" % [uuid])
 	await download_file(origin + "reaction/list", "user://download/%s/reactions/list.json" % [uuid])
 	await download_file(origin + "matter/list", "user://download/%s/matters/list.json" % [uuid])
