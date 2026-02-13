@@ -75,6 +75,26 @@ offset_bottom = 81.0
 theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 24
 
+[node name="LoadSource" type="Node2D" parent="." unique_id=230611076]
+position = Vector2(44, 314)
+metadata/_edit_group_ = true
+
+[node name="LoadSourceLabel" type="Label" parent="LoadSource" unique_id=299353496]
+offset_left = 9.0
+offset_top = 10.0
+offset_right = 132.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("2_6wm04")
+theme_override_font_sizes/font_size = 30
+text = "加载本地数据"
+
+[node name="ChooseSource" type="OptionButton" parent="LoadSource" unique_id=1045074926]
+offset_left = 381.0
+offset_top = 5.0
+offset_right = 830.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 25
+
 [node name="SaveButton" type="Button" parent="." unique_id=1377249836]
 offset_left = 85.0
 offset_top = 912.0
@@ -111,6 +131,16 @@ theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 50
 text = "提示：无"
 
+[node name="LoadButton" type="Button" parent="." unique_id=2015694853]
+offset_left = 73.0
+offset_top = 793.0
+offset_right = 249.0
+offset_bottom = 882.0
+theme_override_fonts/font = ExtResource("2_6wm04")
+theme_override_font_sizes/font_size = 30
+text = "加载数据"
+
 [connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="DownloadButton" to="." method="_on_download_button_pressed"]
 [connection signal="pressed" from="CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="LoadButton" to="." method="_on_load_button_pressed"]
