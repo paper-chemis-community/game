@@ -6,6 +6,8 @@ var card_list: Array
 
 func _ready() -> void:
 	init()
+	var card = create_card("Oxygen")
+	card.show()
 
 func init() -> void:
 	if multiplayer.is_server():
@@ -26,4 +28,4 @@ func create_card(card_name: String):
 	add_child(card)
 	card.set_card(card_name)
 	card_list.append(card)
-	print(card.card_name)
+	return card

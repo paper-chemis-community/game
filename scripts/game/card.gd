@@ -5,8 +5,10 @@ var type: String
 var card_name: String
 
 func set_texture(pic: String) -> void:
-    $Sprite.texture = ResourceLoader.load(pic)
+	var image = Image.new()
+	image.load(pic)
+	$Sprite.texture = ImageTexture.create_from_image(image)
 
 func set_card(cname: String) -> void:
-    card_name = cname
-    set_texture(GameManager.pic_list[card_name])
+	card_name = cname
+	set_texture("user://download/%s/assets/pics/%s" % [DownloadManager.uuid, GameManager.pic_list[card_name]])
