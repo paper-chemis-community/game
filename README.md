@@ -14,27 +14,27 @@ game/
 - project.godot
 - icon.svg
 - assets/
-	- fonts/
-		- AlibabaPuHuiTi-3-65-Medium.ttf    # 阿里巴巴普惠体
-	- pics/
+    - fonts/
+        - AlibabaPuHuiTi-3-65-Medium.ttf    # 阿里巴巴普惠体
+    - pics/
 - scenes
-	- main_menu.tscn
-	- game.tscn
-	- settings.tscn
+    - main_menu.tscn
+    - game.tscn
+    - settings.tscn
 - scripts/
-	- autoload/
-		- GameManager.gd        # 游戏管理
-		- DownloadManager.gd    # 下载管理
-		- MultiGame.gd          # 多人游戏功能
-		- SceneManager.gd       # 场景管理
-	- main_menu/
-		- main_menu.gd
-		- join_game_ui.gd
-		- create_game_ui.gd
-	- game/
-		- game.gd
-	- settings/
-		- settings.gd
+    - autoload/
+        - GameManager.gd        # 游戏管理
+        - DownloadManager.gd    # 下载管理
+        - MultiGame.gd          # 多人游戏功能
+        - SceneManager.gd       # 场景管理
+    - main_menu/
+        - main_menu.gd
+        - join_game_ui.gd
+        - create_game_ui.gd
+    - game/
+        - game.gd
+    - settings/
+        - settings.gd
 ```
 
 ## 如何运行
@@ -43,7 +43,7 @@ game/
 
 ## 最佳实践
 
-本项目目前正在使用 Godot 4.5.1 进行开发。开发用语言为 GDScript。
+本项目目前正在使用 Godot 4.6 进行开发。开发用语言为 GDScript。
 
 你的开发应当遵循 Godot 引擎提供的[最佳实践](https://docs.godotengine.org/zh-cn/4.5/tutorials/best_practices/)及[GDScript 编写风格指南](https://docs.godotengine.org/zh-cn/4.5/tutorials/scripting/gdscript/gdscript_styleguide.html)。但下面提到的除外：
 
