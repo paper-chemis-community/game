@@ -21,6 +21,9 @@ game/
 	- main_menu.tscn
 	- game.tscn
 	- settings.tscn
+- prefabs/
+	- game/
+		- card.tscn
 - scripts/
 	- autoload/
 		- GameManager.gd        # 游戏管理
@@ -39,12 +42,12 @@ game/
 
 ## 如何运行
 
-请先运行数据后端，在游戏设置中输入后端 URL（包含端口号和 `http://` 或 `https://` 前缀，然后创建游戏或加入游戏开始游玩。
+请先运行数据后端，在游戏设置中输入后端 URL（包含端口号和 `http://` 或 `https://` 前缀，或者选择本地已有的数据源，然后创建游戏或加入游戏开始游玩。
 
 ## 最佳实践
 
 本项目目前正在使用 Godot 4.6 进行开发。开发用语言为 GDScript。
 
-你的开发应当遵循 Godot 引擎提供的[最佳实践](https://docs.godotengine.org/zh-cn/4.5/tutorials/best_practices/)及[GDScript 编写风格指南](https://docs.godotengine.org/zh-cn/4.5/tutorials/scripting/gdscript/gdscript_styleguide.html)。但下面提到的除外：
+你的开发应当遵循 Godot 引擎提供的[最佳实践](https://docs.godotengine.org/zh-cn/4.x/tutorials/best_practices/)及[GDScript 编写风格指南](https://docs.godotengine.org/zh-cn/4.x/tutorials/scripting/gdscript/gdscript_styleguide.html)。但下面提到的除外：
 
 除 `autoload` 目录下的单例脚本使用大驼峰式命名，其余脚本均应使用小蛇形式命令。所有节点均应使用大驼峰式命名。

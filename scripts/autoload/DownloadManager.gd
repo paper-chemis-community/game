@@ -69,6 +69,10 @@ func download_from_origin() -> int:
 
 	get_uuid()
 
+	DirAccess.remove_absolute("user://download/temp/index.json")
+	DirAccess.remove_absolute("user://download/temp/")
+
+	await download_file(origin + "index", "user://download/%s/index.json" % [uuid])
 	await download_file(origin + "card/list", "user://download/%s/cards/list.json" % [uuid])
 	await download_file(origin + "reaction/list", "user://download/%s/reactions/list.json" % [uuid])
 	await download_file(origin + "matter/list", "user://download/%s/matters/list.json" % [uuid])
@@ -79,6 +83,8 @@ func download_from_origin() -> int:
 	await download_defs("matter", origin)
 	
 	await download_assets(origin)
+
+	get_sources()
 
 	return 0
 
@@ -100,3 +106,17 @@ func load_resource():
 	GameManager.pic_list = asset_list["pics"]
 	GameManager.sound_list = asset_list["sounds"]
 	asset_file.close()
+
+func get_sources():
+	var dir = DirAccess.open("user://download/")
+	var subdirs: PackedStringArray = dir.get_directories()
+	for subdir in subdirs:
+		if subdir == "temp":
+			continue
+		var file = FileAccess.open("user://download/%s/index.json" % [subdir], FileAccess.READ)
+		var text = file.get_as_text()
+		var content = JSON.parse_string(text)
+		file.close()
+		var source_name = content["name"]
+		var source_uuid = content["uuid"]
+		GameManager.sources[source_name] = source_uuid
