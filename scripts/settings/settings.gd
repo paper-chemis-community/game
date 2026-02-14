@@ -12,9 +12,8 @@ func init_text() -> void:
 
 func init_sources() -> void:
 	DownloadManager.get_sources()
-	var options = $LoadSource/ChooseSource
 	for source_name in GameManager.sources:
-		options.add_item(source_name)
+		$LoadSource/ChooseSource.add_item(source_name)
 
 func _on_save_button_pressed() -> void:
 	GameManager.data_origin = $DataSetting/LineEdit.text

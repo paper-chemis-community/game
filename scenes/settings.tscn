@@ -122,15 +122,6 @@ theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 30
 text = "取消"
 
-[node name="Tips" type="Label" parent="." unique_id=1777076648]
-offset_left = 711.0
-offset_top = 913.0
-offset_right = 1738.0
-offset_bottom = 966.0
-theme_override_fonts/font = ExtResource("2_6wm04")
-theme_override_font_sizes/font_size = 50
-text = "提示：无"
-
 [node name="LoadButton" type="Button" parent="." unique_id=2015694853]
 offset_left = 73.0
 offset_top = 793.0
@@ -139,6 +130,15 @@ offset_bottom = 882.0
 theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 30
 text = "加载数据"
+
+[node name="Tips" type="Label" parent="." unique_id=1777076648]
+offset_left = 711.0
+offset_top = 913.0
+offset_right = 1738.0
+offset_bottom = 966.0
+theme_override_fonts/font = ExtResource("2_6wm04")
+theme_override_font_sizes/font_size = 50
+text = "提示：无"
 
 [connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="DownloadButton" to="." method="_on_download_button_pressed"]

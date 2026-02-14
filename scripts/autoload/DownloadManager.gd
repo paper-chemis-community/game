@@ -110,7 +110,6 @@ func load_resource():
 func get_sources():
 	var dir = DirAccess.open("user://download/")
 	var subdirs: PackedStringArray = dir.get_directories()
-	print(subdirs)
 	for subdir in subdirs:
 		if subdir == "temp":
 			continue
