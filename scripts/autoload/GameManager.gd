@@ -3,7 +3,7 @@ extends Node
 var data_origin: String = ""
 var ip_begin: String = "192.168."
 var username: String = "Player1"
-var source: int = 0
+var source: int = -1
 
 var card_list: Dictionary = {}
 var matter_list: Dictionary = {}

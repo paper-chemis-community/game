@@ -9,8 +9,8 @@ script = ExtResource("1_yqjtg")
 [node name="Background" type="ColorRect" parent="." unique_id=802635055]
 offset_left = -34.0
 offset_top = -27.0
-offset_right = 1954.0
-offset_bottom = 1167.0
+offset_right = 2594.0
+offset_bottom = 1476.0
 color = Color(0.7058824, 0.6862745, 0, 1)
 
 [node name="IsServerLabel" type="Label" parent="." unique_id=592205212]
@@ -34,10 +34,10 @@ text = "127.0.0.2"
 [node name="Player1" type="Node2D" parent="." unique_id=1336934388]
 
 [node name="Username" type="Label" parent="Player1" unique_id=264475054]
-offset_left = 49.0
-offset_top = 970.0
-offset_right = 531.0
-offset_bottom = 1028.0
+offset_left = 70.0
+offset_top = 1338.0
+offset_right = 552.0
+offset_bottom = 1396.0
 theme_override_fonts/font = ExtResource("1_uwrxv")
 theme_override_font_sizes/font_size = 35
 text = "Player1"
@@ -45,10 +45,10 @@ text = "Player1"
 [node name="Player2" type="Node2D" parent="." unique_id=1559551502]
 
 [node name="Username" type="Label" parent="Player2" unique_id=1130366682]
-offset_left = 1521.0
-offset_top = 15.0
-offset_right = 1834.0
-offset_bottom = 73.0
+offset_left = 2121.0
+offset_top = 36.0
+offset_right = 2434.0
+offset_bottom = 94.0
 theme_override_fonts/font = ExtResource("1_uwrxv")
 theme_override_font_sizes/font_size = 35
 text = "Player2"

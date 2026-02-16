@@ -9,8 +9,8 @@ script = ExtResource("1_r6d6q")
 [node name="Background" type="ColorRect" parent="." unique_id=1213198647]
 offset_left = -34.0
 offset_top = -27.0
-offset_right = 1911.0
-offset_bottom = 1050.0
+offset_right = 2623.0
+offset_bottom = 1500.0
 color = Color(0.7058824, 0.6862745, 0, 1)
 
 [node name="DataSetting" type="Node2D" parent="." unique_id=700043200]
@@ -96,46 +96,46 @@ offset_bottom = 60.0
 theme_override_font_sizes/font_size = 25
 
 [node name="SaveButton" type="Button" parent="." unique_id=1377249836]
-offset_left = 85.0
-offset_top = 912.0
-offset_right = 249.0
-offset_bottom = 989.0
+offset_left = 150.0
+offset_top = 1321.0
+offset_right = 314.0
+offset_bottom = 1398.0
 theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 30
 text = "保存设置"
 
 [node name="DownloadButton" type="Button" parent="." unique_id=315804661]
-offset_left = 493.0
-offset_top = 905.0
-offset_right = 669.0
-offset_bottom = 994.0
+offset_left = 598.0
+offset_top = 1316.0
+offset_right = 774.0
+offset_bottom = 1405.0
 theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 30
 text = "下载文件"
 
 [node name="CancelButton" type="Button" parent="." unique_id=135993345]
-offset_left = 286.0
-offset_top = 906.0
-offset_right = 462.0
-offset_bottom = 995.0
+offset_left = 371.0
+offset_top = 1305.0
+offset_right = 550.0
+offset_bottom = 1394.0
 theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 30
 text = "取消"
 
 [node name="LoadButton" type="Button" parent="." unique_id=2015694853]
-offset_left = 73.0
-offset_top = 793.0
-offset_right = 249.0
-offset_bottom = 882.0
+offset_left = 135.0
+offset_top = 1198.0
+offset_right = 311.0
+offset_bottom = 1287.0
 theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 30
 text = "加载数据"
 
 [node name="Tips" type="Label" parent="." unique_id=1777076648]
-offset_left = 711.0
-offset_top = 913.0
-offset_right = 1738.0
-offset_bottom = 966.0
+offset_left = 893.0
+offset_top = 1318.0
+offset_right = 1920.0
+offset_bottom = 1388.0
 theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 50
 text = "提示：无"

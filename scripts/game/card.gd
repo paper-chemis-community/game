@@ -11,4 +11,4 @@ func set_texture(pic: String) -> void:
 
 func set_card(cname: String) -> void:
 	card_name = cname
-	set_texture("user://download/%s/assets/pics/%s" % [DownloadManager.uuid, GameManager.pic_list[card_name]])
+	set_texture("user://download/sources/%s/assets/pics/%s" % [DownloadManager.uuid, GameManager.pic_list[card_name]])

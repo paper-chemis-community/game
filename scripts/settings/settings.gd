@@ -43,6 +43,9 @@ func _on_download_button_pressed() -> void:
 
 
 func _on_load_button_pressed() -> void:
+	if GameManager.sources.size() == 0 or GameManager.source == -1:
+		$Tips.text = "提示：无本地数据或未选择，无法加载"
+		return;
 	DownloadManager.uuid = GameManager.sources[$LoadSource/ChooseSource.text]
 	DownloadManager.load_resource()
 	$Tips.text = "提示：完成加载"

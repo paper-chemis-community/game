@@ -1,6 +1,5 @@
 extends Node2D
 
-
 func _on_create_game_button_pressed() -> void:
 	var player_num = int($CreateGameEdit.text)
 	if 2 <= player_num and player_num <= 4:
