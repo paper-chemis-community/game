@@ -108,6 +108,8 @@ func load_resource():
 	asset_file.close()
 
 func get_sources():
+	if !DirAccess.dir_exists_absolute("user://download/sources/"):
+		DirAccess.make_dir_recursive_absolute("user://download/sources/")
 	var dir = DirAccess.open("user://download/sources/")
 	var subdirs: PackedStringArray = dir.get_directories()
 	for subdir in subdirs:

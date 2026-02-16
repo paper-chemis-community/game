@@ -1,67 +1,67 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2rokrdsjgx62"]
+[gd_scene format=3 uid="uid://b2rokrdsjgx62"]
 
 [ext_resource type="Script" uid="uid://bnieej0tc51ei" path="res://scripts/main_menu/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://c2bipf4tpdjj8" path="res://assets/fonts/AlibabaPuHuiTi-3-65-Medium.ttf" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://dxekqwgtgqkg" path="res://scripts/main_menu/create_game_ui.gd" id="3_bqqt6"]
 [ext_resource type="Script" uid="uid://cosrsj5i8s26q" path="res://scripts/main_menu/join_game_ui.gd" id="4_wu84c"]
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Node2D" unique_id=436810236]
 script = ExtResource("1_ekxnf")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=1930466338]
 offset_left = -24.0
 offset_top = -22.0
-offset_right = 1925.0
-offset_bottom = 1153.0
+offset_right = 2631.0
+offset_bottom = 1500.0
 color = Color(0.7058824, 0.6862745, 0, 1)
 
-[node name="Title" type="Label" parent="."]
-offset_left = 540.0
-offset_top = 58.0
-offset_right = 1119.0
-offset_bottom = 177.0
+[node name="Title" type="Label" parent="." unique_id=1636642337]
+offset_left = 796.0
+offset_top = 88.0
+offset_right = 1375.0
+offset_bottom = 207.0
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 84
 text = "纸片化学社区版"
 horizontal_alignment = 1
 
-[node name="StartGame" type="Button" parent="."]
-offset_left = 672.0
-offset_top = 355.0
-offset_right = 988.03845
-offset_bottom = 454.0
+[node name="StartGame" type="Button" parent="." unique_id=1933485497]
+offset_left = 931.0
+offset_top = 533.0
+offset_right = 1247.0385
+offset_bottom = 632.0
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 36
 text = "创建局域网游戏"
 
-[node name="JoinGame" type="Button" parent="."]
-offset_left = 666.0
-offset_top = 509.0
-offset_right = 982.03845
-offset_bottom = 608.0
+[node name="JoinGame" type="Button" parent="." unique_id=1061477634]
+offset_left = 932.0
+offset_top = 748.0
+offset_right = 1248.0385
+offset_bottom = 847.0
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 36
 text = "加入局域网游戏"
 
-[node name="CreateGameUI" type="Node2D" parent="."]
+[node name="CreateGameUI" type="Node2D" parent="." unique_id=462604530]
 visible = false
 position = Vector2(585, 355)
 script = ExtResource("3_bqqt6")
 metadata/_edit_group_ = true
 
-[node name="Background" type="ColorRect" parent="CreateGameUI"]
+[node name="Background" type="ColorRect" parent="CreateGameUI" unique_id=1379723910]
 offset_right = 475.0
 offset_bottom = 257.0
 color = Color(0, 0.7372549, 0, 1)
 
-[node name="CreateGameEdit" type="LineEdit" parent="CreateGameUI"]
+[node name="CreateGameEdit" type="LineEdit" parent="CreateGameUI" unique_id=1841600293]
 offset_left = 65.0
 offset_top = 26.0
 offset_right = 392.0
 offset_bottom = 87.0
 
-[node name="CreateGameButton" type="Button" parent="CreateGameUI"]
+[node name="CreateGameButton" type="Button" parent="CreateGameUI" unique_id=1430273388]
 offset_left = 128.0
 offset_top = 127.0
 offset_right = 330.81818
@@ -70,7 +70,7 @@ theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 36
 text = "创建房间"
 
-[node name="Label" type="Label" parent="CreateGameUI"]
+[node name="Label" type="Label" parent="CreateGameUI" unique_id=1494594728]
 offset_left = 131.0
 offset_top = 88.0
 offset_right = 326.0
@@ -78,24 +78,24 @@ offset_bottom = 126.0
 theme_override_fonts/font = ExtResource("1_l6cm7")
 text = "请输入最大玩家数（2～4）"
 
-[node name="Warn" type="Node2D" parent="CreateGameUI"]
+[node name="Warn" type="Node2D" parent="CreateGameUI" unique_id=961920457]
 visible = false
 
-[node name="WarnBackground" type="ColorRect" parent="CreateGameUI/Warn"]
+[node name="WarnBackground" type="ColorRect" parent="CreateGameUI/Warn" unique_id=2017035604]
 offset_left = 86.0
 offset_top = 41.0
 offset_right = 366.0
 offset_bottom = 202.0
 color = Color(1, 0.3137255, 1, 1)
 
-[node name="WarnButton" type="Button" parent="CreateGameUI/Warn"]
+[node name="WarnButton" type="Button" parent="CreateGameUI/Warn" unique_id=1006038249]
 offset_left = 167.0
 offset_top = 125.0
 offset_right = 279.0
 offset_bottom = 188.0
 text = "确定"
 
-[node name="WarnLabel" type="Label" parent="CreateGameUI/Warn"]
+[node name="WarnLabel" type="Label" parent="CreateGameUI/Warn" unique_id=320937650]
 offset_left = 126.0
 offset_top = 64.0
 offset_right = 316.0
@@ -105,24 +105,24 @@ text = "输入数据错误！
 请输入2～4之间的整数！"
 horizontal_alignment = 1
 
-[node name="JoinGameUI" type="Node2D" parent="."]
+[node name="JoinGameUI" type="Node2D" parent="." unique_id=1134060090]
 visible = false
 position = Vector2(585, 355)
 script = ExtResource("4_wu84c")
 metadata/_edit_group_ = true
 
-[node name="Background" type="ColorRect" parent="JoinGameUI"]
+[node name="Background" type="ColorRect" parent="JoinGameUI" unique_id=1020957244]
 offset_right = 475.0
 offset_bottom = 257.0
 color = Color(0, 0.7372549, 0, 1)
 
-[node name="JoinGameEdit" type="LineEdit" parent="JoinGameUI"]
+[node name="JoinGameEdit" type="LineEdit" parent="JoinGameUI" unique_id=179057807]
 offset_left = 65.0
 offset_top = 26.0
 offset_right = 392.0
 offset_bottom = 87.0
 
-[node name="JoinGameButton" type="Button" parent="JoinGameUI"]
+[node name="JoinGameButton" type="Button" parent="JoinGameUI" unique_id=403873003]
 offset_left = 128.0
 offset_top = 127.0
 offset_right = 330.81818
@@ -131,7 +131,7 @@ theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 36
 text = "加入房间"
 
-[node name="Label" type="Label" parent="JoinGameUI"]
+[node name="Label" type="Label" parent="JoinGameUI" unique_id=1927653368]
 offset_left = 131.0
 offset_top = 88.0
 offset_right = 326.0
@@ -139,11 +139,11 @@ offset_bottom = 126.0
 theme_override_fonts/font = ExtResource("1_l6cm7")
 text = "请输入服务器IP（无需加端口）"
 
-[node name="SettingButton" type="Button" parent="."]
-offset_left = 1591.0
-offset_top = 39.0
-offset_right = 1699.0
-offset_bottom = 109.0
+[node name="SettingButton" type="Button" parent="." unique_id=1367541903]
+offset_left = 1998.0
+offset_top = 130.0
+offset_right = 2106.0
+offset_bottom = 200.0
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 30
 text = "设置"
