@@ -16,10 +16,18 @@ func create_server(playern: int) -> void:
 		return
 	multiplayer.multiplayer_peer = peer
 	multiplayer.peer_connected.connect(_on_peer_connected)
+	multiplayer.peer_disconnected.connect(_on_peer_disconnected)
 
 func create_client(ip: String) -> void:
 	peer.create_client(ip, 8989)
 	multiplayer.multiplayer_peer = peer
 
-func _on_peer_connected(id: int):
-	pass
+func _on_peer_connected(id: int) -> void:
+	players.append(id)
+
+func _on_peer_disconnected(id: int) -> void:
+	for i in range(players.size()):
+		if players[i] == id:
+			players.pop_at(i)
+			break
+
