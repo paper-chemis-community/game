@@ -6,8 +6,11 @@ var cards: Array
 var player_num
 var player_cards: Dictionary
 var player_turns: Dictionary
+var player_username: Dictionary
+var player_hp: Dictionary
 
-var round: int
+var server_round: int
+var client_round: int
 
 func add_player(id: int):
 	if players.size() < player_num:
@@ -42,7 +45,7 @@ func start_game() -> void:
 	if players.size() != player_num:
 		return
 	deal_cards()
-	round = 1
+	server_round = 1
 
 func extract() -> String:
 	var index = randi() % cards.size()
@@ -55,22 +58,22 @@ func deal_cards() -> void:
 		player_cards[players[i]].append(extract())
 
 func next_round() -> void:
-	settle()
-	round += 1
+	settle_round()
+	server_round += 1
 
-func settle() -> void:
-	pass
+func settle_round() -> void:
+	remote_variable()
 
 @rpc
 func begin_round() -> void:
 	var id = multiplayer.get_remote_sender_id()
-	if round == 1 and 0 <= player_turns[id] <= 1:
+	if server_round == 1 and 0 <= player_turns[id] <= 1:
 		for i in range(3):
 			if player_cards[id].size() >= 8:
 				break
 			player_cards[id].append(extract())
 	else:
-		for i in range(2):
+		for i in range(4):
 			if player_cards[id].size() >= 8:
 				break
 			player_cards[id].append(extract())
@@ -80,3 +83,23 @@ func get_cards() -> Array:
 	var sender_id = multiplayer.get_remote_sender_id()
 	var data: Array = player_cards.get(sender_id, [-1])
 	return data
+
+func remote_variable() -> void:
+	if not multiplayer.is_server():
+		return
+	var data: Dictionary = {}
+	data["cards"] = cards
+	data["player_cards"] = player_cards
+	data["player_turns"] = player_turns
+	data["player_hp"] = player_hp
+	data["server_round"] = server_round
+
+	get_remote_variable.rpc(data)
+
+@rpc("authority", "call_remote", "reliable")
+func get_remote_variable(data: Dictionary) -> void:
+	cards = data["cards"]
+	player_cards = data["player_cards"]
+	player_turns = data["player_turns"]
+	player_hp = data["player_hp"]
+	server_round = data["server_round"]
