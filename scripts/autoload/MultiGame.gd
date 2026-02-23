@@ -3,7 +3,8 @@ extends Node
 var peer = ENetMultiplayerPeer.new()
 var players: Array
 var cards: Array
-var player_num
+var my_card: Array
+var max_players
 var player_cards: Dictionary
 var player_turns: Dictionary
 var player_username: Dictionary
@@ -13,11 +14,19 @@ var server_round: int
 var client_round: int
 
 func add_player(id: int):
-	if players.size() < player_num:
+	if players.size() < max_players:
 		players.append(id)
+		player_cards[id] = []
+
+func remove_player(id: int):
+	for i in range(players.size()):
+		if players[i] == id:
+			players.pop_at(i)
+			player_cards.erase(id)
+			break
 
 func create_server(playern: int) -> void:
-	player_num = playern
+	max_players = playern
 	var error = peer.create_server(8989, playern)
 	if error != OK:
 		printerr(error)
@@ -31,58 +40,75 @@ func create_client(ip: String) -> void:
 	multiplayer.multiplayer_peer = peer
 
 func _on_peer_connected(id: int) -> void:
-	players.append(id)
-	player_cards[id] = []
+	add_player(id)
 
 func _on_peer_disconnected(id: int) -> void:
-	for i in range(players.size()):
-		if players[i] == id:
-			players.pop_at(i)
-			player_cards.erase(id)
-			break
+	remove_player(id)
 
 func start_game() -> void:
-	if players.size() != player_num:
+	if players.size() != max_players:
 		return
 	deal_cards()
 	server_round = 1
 
 func extract() -> String:
+	if cards.size() == 0:
+		return ""
 	var index = randi() % cards.size()
 	var card = cards[index]
 	cards.pop_at(index)
 	return card
 
 func deal_cards() -> void:
-	for i in range(player_num):
-		player_cards[players[i]].append(extract())
+	for player in players:
+		while player_cards[player].size() < 8:
+			var card = extract()
+			if card != "":
+				player_cards[player].append(card)
 
 func next_round() -> void:
 	settle_round()
 	server_round += 1
 
 func settle_round() -> void:
+	for player in players:
+		begin_round.rpc_id(player, player)
 	remote_variable()
 
-@rpc
-func begin_round() -> void:
-	var id = multiplayer.get_remote_sender_id()
-	if server_round == 1 and 0 <= player_turns[id] <= 1:
+@rpc("any_peer", "call_remote", "reliable")
+func begin_round(id: int) -> void:
+	request_card_draw.rpc(1, id)
+
+@rpc("any_peer", "call_remote", "reliable")
+func request_card_draw(player_id: int) -> void:
+	if server_round == 1 and 0 <= player_turns[player_id] <= 1:
 		for i in range(3):
-			if player_cards[id].size() >= 8:
+			if player_cards[player_id].size() >= 8:
 				break
-			player_cards[id].append(extract())
+			var card = extract()
+			if card != "":
+				player_cards[player_id].append(card)
 	else:
 		for i in range(4):
-			if player_cards[id].size() >= 8:
+			if player_cards[player_id].size() >= 8:
 				break
-			player_cards[id].append(extract())
+			var card = extract()
+			if card != "":
+				player_cards[player_id].append(card)
+	remote_variable()
 
-@rpc
-func get_cards() -> Array:
+func get_my_cards() -> void:
+	request_cards.rpc()
+
+@rpc("any_peer", "call_remote", "reliable")
+func request_cards() -> void:
 	var sender_id = multiplayer.get_remote_sender_id()
 	var data: Array = player_cards.get(sender_id, [-1])
-	return data
+	send_cards.rpc_id(sender_id, data)
+
+@rpc("authority", "call_remote", "reliable")
+func send_cards(data: Array) -> void:
+	my_card = data
 
 func remote_variable() -> void:
 	if not multiplayer.is_server():
