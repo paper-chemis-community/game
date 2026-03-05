@@ -1,10 +1,11 @@
 extends Node
 
 var peer = ENetMultiplayerPeer.new()
+
 var players: Array
 var cards: Array
 var my_card: Array
-var max_players
+var max_players: int
 var player_cards: Dictionary
 var player_turns: Dictionary
 var player_username: Dictionary
@@ -50,6 +51,7 @@ func start_game() -> void:
 		return
 	deal_cards()
 	server_round = 1
+	remote_variable()
 
 func extract() -> String:
 	if cards.size() == 0:
@@ -72,14 +74,9 @@ func next_round() -> void:
 
 func settle_round() -> void:
 	for player in players:
-		begin_round.rpc_id(player, player)
+		request_card_draw(player)
 	remote_variable()
 
-@rpc("any_peer", "call_remote", "reliable")
-func begin_round(id: int) -> void:
-	request_card_draw.rpc(1, id)
-
-@rpc("any_peer", "call_remote", "reliable")
 func request_card_draw(player_id: int) -> void:
 	if server_round == 1 and 0 <= player_turns[player_id] <= 1:
 		for i in range(3):
