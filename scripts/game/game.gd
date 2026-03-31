@@ -8,6 +8,8 @@ func _ready() -> void:
 	init()
 	var card = create_card("Oxygen")
 	card.show()
+	card.set_pos(300, 300)
+	print(card.get_pos())
 
 func init() -> void:
 	if multiplayer.is_server():
