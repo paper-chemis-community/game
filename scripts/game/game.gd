@@ -20,6 +20,7 @@ func init() -> void:
 	for address in addresses:
 		if address.substr(0, GameManager.ip_begin.length()) == GameManager.ip_begin:
 			ipaddress = address
+			break
 	$IPLabel.text = ipaddress
 	$Player1/Username.text = GameManager.username
 

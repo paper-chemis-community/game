@@ -44,6 +44,15 @@ theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 36
 text = "加入局域网游戏"
 
+[node name="QuitGame" type="Button" parent="." unique_id=70898198]
+offset_left = 932.0
+offset_top = 959.0
+offset_right = 1248.0386
+offset_bottom = 1058.0
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 36
+text = "退出游戏"
+
 [node name="CreateGameUI" type="Node2D" parent="." unique_id=462604530]
 visible = false
 position = Vector2(585, 355)
@@ -150,6 +159,7 @@ text = "设置"
 
 [connection signal="pressed" from="StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="JoinGame" to="." method="_on_join_game_pressed"]
+[connection signal="pressed" from="QuitGame" to="." method="_on_quit_game_pressed"]
 [connection signal="pressed" from="CreateGameUI/CreateGameButton" to="CreateGameUI" method="_on_create_game_button_pressed"]
 [connection signal="pressed" from="CreateGameUI/Warn/WarnButton" to="CreateGameUI" method="_on_warn_button_pressed"]
 [connection signal="pressed" from="JoinGameUI/JoinGameButton" to="JoinGameUI" method="_on_join_game_button_pressed"]

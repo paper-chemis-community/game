@@ -20,7 +20,7 @@ func _on_save_button_pressed() -> void:
 	GameManager.ip_begin = $IPBeginSetting/LineEdit.text
 	GameManager.username = $UsernameSetting/LineEdit.text
 	GameManager.source = $LoadSource/ChooseSource.get_selected()
-	SceneManager.goto_scene("main_menu")
+	$Tips.text = "提示：保存设置成功"
 
 
 func _on_cancel_button_pressed() -> void:
