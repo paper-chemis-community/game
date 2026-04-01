@@ -13,9 +13,9 @@ func _ready() -> void:
 
 func init() -> void:
 	if multiplayer.is_server():
-		$IsServerLabel.text = "房间运行中：您是房主"
+		$IsServerLabel.text = "GAMEUI_URHOST"
 	else:
-		$IsServerLabel.text = "房间运行中：您是房客"
+		$IsServerLabel.text = "GAMEUI_URGUEST"
 	
 	var addresses: PackedStringArray = IP.get_local_addresses()
 	var ipaddress: String = ""

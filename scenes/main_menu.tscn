@@ -23,7 +23,7 @@ offset_bottom = 207.0
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 84
-text = "纸片化学社区版"
+text = "MAINMENU_TITLE"
 horizontal_alignment = 1
 
 [node name="StartGame" type="Button" parent="." unique_id=1933485497]
@@ -33,7 +33,7 @@ offset_right = 1247.0385
 offset_bottom = 632.0
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 36
-text = "创建局域网游戏"
+text = "MAINMENU_CREATEGAME"
 
 [node name="JoinGame" type="Button" parent="." unique_id=1061477634]
 offset_left = 932.0
@@ -42,7 +42,7 @@ offset_right = 1248.0385
 offset_bottom = 847.0
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 36
-text = "加入局域网游戏"
+text = "MAINMENU_JOINGAME"
 
 [node name="QuitGame" type="Button" parent="." unique_id=70898198]
 offset_left = 932.0
@@ -51,7 +51,7 @@ offset_right = 1248.0386
 offset_bottom = 1058.0
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 36
-text = "退出游戏"
+text = "MAINMENU_QUITGAME"
 
 [node name="CreateGameUI" type="Node2D" parent="." unique_id=462604530]
 visible = false
@@ -155,7 +155,7 @@ offset_right = 2106.0
 offset_bottom = 200.0
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 30
-text = "设置"
+text = "MAINMENU_SETTINGS"
 
 [connection signal="pressed" from="StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="JoinGame" to="." method="_on_join_game_pressed"]

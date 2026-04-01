@@ -1,0 +1,28 @@
+keys,en,zh-cn
+en,English,English
+zh-cn,简体中文,简体中文
+MAINMENU_TITLE,Paper Chemis Community,纸片化学社区版
+MAINMENU_CREATEGAME,Create LAN Game,创建局域网游戏
+MAINMENU_JOINGAME,Join LAN Game,加入局域网游戏
+MAINMENU_QUITGAME,Quit Game,退出游戏
+MAINMENU_SETTINGS,Settings,设置
+SETTINGS_SETSOURCE,Set Data Source,数据源设置
+SETTINGS_IPBEGIN,Auto IP Beginning,自动识别 IP 地址的起始部分
+SETTINGS_NICKNAME,Nickname in Game,局内显示昵称
+SETTINGS_LOADDATA,Load Local Data,加载本地数据
+SETTINGS_SAVESETTINGS,Save Settings,保存设置
+SETTINGS_BACK,Back,返回
+SETTINGS_DOWNLOAD,Download,下载文件
+SETTINGS_LOAD,Load Data,加载数据
+SETTINGS_CHOOSELANG,Choose Language,选择语言
+SETTINGS_TIP_NULL,Tip: None,提示：无
+SETTINGS_TIP_SAVESETTINGS,Tip: Successfully saved settings,提示：保存设置成功
+SETTINGS_TIP_STARTDOWNLOAD,Tip: Have started downloading. do not close the settings page,提示：已开始下载，请勿关闭设置页面
+SETTINGS_TIP_SOURCEERROR,Tip: Download failed. Data source path error,提示：下载失败。数据源路径错误
+SETTINGS_TIP_REQUESTERROR,Tip: Download failed. Failed to create a request,提示：下载失败。创建请求失败
+SETTINGS_TIP_LOADING,Tip: Loading Resources. do not close the settings page,提示：正在加载资源，请勿关闭设置页面
+SETTINGS_TIP_LOADED,Tip: Finish Loading,提示：完成加载
+SETTINGS_TIP_NOLOCALSOURCE,Tip: No local data or no selection,提示：无本地数据或未选择，无法加载
+GAMEUI_URNULL,Roome Running: You are XXX XXXX,啊啊啊啊啊：啊啊啊啊
+GAMEUI_URHOST,Room Running: You are the Host,房间运行中：您是房主
+GAMEUI_URGUEST,Room Running: You are a Guest,房间运行中：您是房客

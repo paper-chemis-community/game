@@ -20,7 +20,7 @@ offset_right = 255.0
 offset_bottom = 63.0
 theme_override_fonts/font = ExtResource("1_uwrxv")
 theme_override_font_sizes/font_size = 20
-text = "啊啊啊啊啊：啊啊啊啊"
+text = "GAMEUI_URNULL"
 
 [node name="IPLabel" type="Label" parent="." unique_id=2017838611]
 offset_left = 54.0

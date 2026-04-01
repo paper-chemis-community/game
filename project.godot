@@ -31,6 +31,10 @@ DownloadManager="*res://scripts/autoload/DownloadManager.gd"
 window/size/viewport_width=2560
 window/size/viewport_height=1440
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://assets/translation/trans.en.translation", "res://assets/translation/trans.zh.translation")
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
