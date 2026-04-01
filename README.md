@@ -52,8 +52,8 @@ game/
 
 你的开发应当遵循 Godot 引擎提供的[最佳实践](https://docs.godotengine.org/zh-cn/4.x/tutorials/best_practices/)及[GDScript 编写风格指南](https://docs.godotengine.org/zh-cn/4.x/tutorials/scripting/gdscript/gdscript_styleguide.html)。但下面提到的除外：
 
-除 `autoload` 目录下的单例脚本使用大驼峰式命名，其余脚本均应使用小蛇形式命名。所有节点均应使用大驼峰式命名。
+- 除 `autoload` 目录下的单例脚本使用大驼峰式命名，其余脚本均应使用小蛇形式命名。所有节点均应使用大驼峰式命名。
 
-除连接了信号或 HTTPRequest、MultiplayerAPI 的函数外，任何函数都不应该以下划线（`_`）开头。
+- 除连接了信号或 HTTPRequest、MultiplayerAPI 的函数外，任何函数都不应该以下划线（`_`）开头。
 
-函数之间只需间隔一行，无需间隔两行。
+- 函数之间只需间隔一行，无需间隔两行。
