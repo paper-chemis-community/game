@@ -9,12 +9,6 @@ func init_text() -> void:
 	$IPBeginSetting/LineEdit.text = GameManager.ip_begin
 	$UsernameSetting/LineEdit.text = GameManager.username
 	$LoadSource/ChooseSource.select(GameManager.source)
-	var language = "automatic"
-	if language == "automatic":
-		var preferred_language = OS.get_locale_language()
-		TranslationServer.set_locale(preferred_language)
-	else:
-		TranslationServer.set_locale(language)
 
 func init_sources() -> void:
 	DownloadManager.get_sources()
