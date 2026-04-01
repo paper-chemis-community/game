@@ -16,8 +16,9 @@ game/
 - assets/
 	- fonts/
 		- AlibabaPuHuiTi-3-65-Medium.ttf    # 阿里巴巴普惠体
-	- pics/
-- scenes
+	- translation/
+		- trans.csv
+- scenes/
 	- main_menu.tscn
 	- game.tscn
 	- settings.tscn
@@ -43,7 +44,7 @@ game/
 
 ## 如何运行
 
-请先运行数据后端，在游戏设置中输入后端 URL（包含端口号和 `http://` 或 `https://` 前缀，或者选择本地已有的数据源，然后创建游戏或加入游戏开始游玩。
+请先运行数据后端，在游戏设置中输入后端 URL（包含端口号和 `http://` 或 `https://` 前缀），或者选择本地已有的数据源，然后创建游戏或加入游戏开始游玩。
 
 ## 最佳实践
 
@@ -51,7 +52,7 @@ game/
 
 你的开发应当遵循 Godot 引擎提供的[最佳实践](https://docs.godotengine.org/zh-cn/4.x/tutorials/best_practices/)及[GDScript 编写风格指南](https://docs.godotengine.org/zh-cn/4.x/tutorials/scripting/gdscript/gdscript_styleguide.html)。但下面提到的除外：
 
-除 `autoload` 目录下的单例脚本使用大驼峰式命名，其余脚本均应使用小蛇形式命令。所有节点均应使用大驼峰式命名。
+除 `autoload` 目录下的单例脚本使用大驼峰式命名，其余脚本均应使用小蛇形式命名。所有节点均应使用大驼峰式命名。
 
 除连接了信号或 HTTPRequest、MultiplayerAPI 的函数外，任何函数都不应该以下划线（`_`）开头。
 

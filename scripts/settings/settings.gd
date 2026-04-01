@@ -9,6 +9,12 @@ func init_text() -> void:
 	$IPBeginSetting/LineEdit.text = GameManager.ip_begin
 	$UsernameSetting/LineEdit.text = GameManager.username
 	$LoadSource/ChooseSource.select(GameManager.source)
+	var language = "automatic"
+	if language == "automatic":
+		var preferred_language = OS.get_locale_language()
+		TranslationServer.set_locale(preferred_language)
+	else:
+		TranslationServer.set_locale(language)
 
 func init_sources() -> void:
 	DownloadManager.get_sources()
@@ -20,7 +26,8 @@ func _on_save_button_pressed() -> void:
 	GameManager.ip_begin = $IPBeginSetting/LineEdit.text
 	GameManager.username = $UsernameSetting/LineEdit.text
 	GameManager.source = $LoadSource/ChooseSource.get_selected()
-	SceneManager.goto_scene("main_menu")
+	TranslationServer.set_locale($ChooseLanguage/ChooseLanguage.text)
+	$Tips.text = "SETTINGS_TIP_SAVESETTINGS"
 
 
 func _on_cancel_button_pressed() -> void:
@@ -28,24 +35,24 @@ func _on_cancel_button_pressed() -> void:
 
 
 func _on_download_button_pressed() -> void:
-	$Tips.text = "提示：已开始下载，请勿关闭设置页面"
+	$Tips.text = "SETTINGS_TIP_STARTDOWNLOAD"
 	var result: int = await DownloadManager.download_from_origin()
 	if result == 1:
-		$Tips.text = "提示：下载失败。数据源路径错误"
+		$Tips.text = "SETTINGS_TIP_SOURCEERROR"
 		return
 	elif result == 2:
-		$Tips.text = "提示：下载失败。创建请求失败"
+		$Tips.text = "SETTINGS_TIP_REQUESTERROR"
 		return
-	$Tips.text = "提示：正在加载资源，请勿关闭设置页面"
+	$Tips.text = "SETTINGS_TIP_LOADING"
 	DownloadManager.load_resource()
-	$Tips.text = "提示：完成加载"
+	$Tips.text = "SETTINGS_TIP_LOADED"
 	
 
 
 func _on_load_button_pressed() -> void:
 	if GameManager.sources.size() == 0 or GameManager.source == -1:
-		$Tips.text = "提示：无本地数据或未选择，无法加载"
+		$Tips.text = "SETTINGS_TIP_NOLOCALSOURCE"
 		return;
 	DownloadManager.uuid = GameManager.sources[$LoadSource/ChooseSource.text]
 	DownloadManager.load_resource()
-	$Tips.text = "提示：完成加载"
+	$Tips.text = "SETTINGS_TIP_LOADED"

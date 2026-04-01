@@ -8,18 +8,21 @@ func _ready() -> void:
 	init()
 	var card = create_card("Oxygen")
 	card.show()
+	card.set_pos(300, 300)
+	print(card.get_pos())
 
 func init() -> void:
 	if multiplayer.is_server():
-		$IsServerLabel.text = "房间运行中：您是房主"
+		$IsServerLabel.text = "GAMEUI_URHOST"
 	else:
-		$IsServerLabel.text = "房间运行中：您是房客"
+		$IsServerLabel.text = "GAMEUI_URGUEST"
 	
 	var addresses: PackedStringArray = IP.get_local_addresses()
 	var ipaddress: String = ""
 	for address in addresses:
 		if address.substr(0, GameManager.ip_begin.length()) == GameManager.ip_begin:
 			ipaddress = address
+			break
 	$IPLabel.text = ipaddress
 	$Player1/Username.text = GameManager.username
 
