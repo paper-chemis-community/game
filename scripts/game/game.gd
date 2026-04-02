@@ -1,6 +1,6 @@
 extends Node2D
 
-var CardScene = preload("res://prefabs/game/card.tscn")
+var CardScene = preload("res://scenes/game/card.tscn")
 
 var card_list: Array
 
