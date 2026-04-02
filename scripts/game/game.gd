@@ -1,7 +1,5 @@
 extends Node2D
 
-var CardScene = preload("res://scenes/game/card.tscn")
-
 var card_list: Array
 
 func _ready() -> void:
@@ -27,7 +25,7 @@ func init() -> void:
 	$Player1/Username.text = GameManager.username
 
 func create_card(card_name: String):
-	var card = CardScene.instantiate()
+	var card = SceneManager.Card.instantiate()
 	add_child(card)
 	card.set_card(card_name)
 	card_list.append(card)

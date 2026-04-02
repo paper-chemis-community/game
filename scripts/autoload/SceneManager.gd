@@ -2,7 +2,7 @@ extends Node
 
 var current_scene = null
 
-var Card = ResourceLoader.load("res://prefabs/game/card.tscn")
+var Card = ResourceLoader.load("res://scenes/game/card.tscn")
 
 func _ready():
     var root = get_tree().root
