@@ -19,11 +19,11 @@ game/
 	- translation/
 		- trans.csv
 - scenes/
-	- main_menu.tscn
-	- game.tscn
-	- settings.tscn
-- prefabs/
+	- menus/
+		- main_menu.tscn
+		- settings.tscn
 	- game/
+		- game.tscn
 		- card.tscn
 - scripts/
 	- autoload/
@@ -48,7 +48,7 @@ game/
 
 ## 最佳实践
 
-本项目目前正在使用 Godot 4.6.1 进行开发。开发用语言为 GDScript。
+本项目目前正在使用 Godot 4.6.2 进行开发。开发用语言为 GDScript。
 
 你的开发应当遵循 Godot 引擎提供的[最佳实践](https://docs.godotengine.org/zh-cn/4.x/tutorials/best_practices/)及[GDScript 编写风格指南](https://docs.godotengine.org/zh-cn/4.x/tutorials/scripting/gdscript/gdscript_styleguide.html)。但下面提到的除外：
 

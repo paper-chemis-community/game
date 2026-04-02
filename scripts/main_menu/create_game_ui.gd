@@ -5,7 +5,7 @@ func _on_create_game_button_pressed() -> void:
 	if 2 <= player_num and player_num <= 4:
 		MultiGame.create_server(int(player_num))
 		$".".hide()
-		SceneManager.goto_scene("game")
+		SceneManager.goto_scene("game/game")
 	else:
 		$Warn.show()
 
