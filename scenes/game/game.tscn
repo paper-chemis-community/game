@@ -7,10 +7,10 @@
 script = ExtResource("1_yqjtg")
 
 [node name="Background" type="ColorRect" parent="." unique_id=802635055]
-offset_left = -34.0
-offset_top = -27.0
-offset_right = 2594.0
-offset_bottom = 1476.0
+offset_left = -29.0
+offset_top = -18.0
+offset_right = 2599.0
+offset_bottom = 1485.0
 color = Color(0.7058824, 0.6862745, 0, 1)
 
 [node name="IsServerLabel" type="Label" parent="." unique_id=592205212]

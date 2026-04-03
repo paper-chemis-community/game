@@ -34,7 +34,7 @@ theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 24
 
 [node name="IPBeginSetting" type="Node2D" parent="." unique_id=1428256194]
-position = Vector2(-1, 94)
+position = Vector2(0, 100)
 metadata/_edit_group_ = true
 
 [node name="IPBeginSetLabel" type="Label" parent="IPBeginSetting" unique_id=561890346]
@@ -55,7 +55,7 @@ theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 24
 
 [node name="UsernameSetting" type="Node2D" parent="." unique_id=564366013]
-position = Vector2(0, 208)
+position = Vector2(0, 200)
 metadata/_edit_group_ = true
 
 [node name="UsernameSetLabel" type="Label" parent="UsernameSetting" unique_id=1569658441]
@@ -76,7 +76,7 @@ theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 24
 
 [node name="LoadSource" type="Node2D" parent="." unique_id=230611076]
-position = Vector2(44, 314)
+position = Vector2(40, 300)
 metadata/_edit_group_ = true
 
 [node name="LoadSourceLabel" type="Label" parent="LoadSource" unique_id=299353496]
@@ -96,7 +96,7 @@ offset_bottom = 60.0
 theme_override_font_sizes/font_size = 25
 
 [node name="ChooseLanguage" type="Node2D" parent="." unique_id=323270128]
-position = Vector2(39, 405)
+position = Vector2(40, 400)
 metadata/_edit_group_ = true
 
 [node name="ChooseLanguageLabel" type="Label" parent="ChooseLanguage" unique_id=1719434618]
@@ -130,10 +130,10 @@ theme_override_font_sizes/font_size = 30
 text = "SETTINGS_SAVESETTINGS"
 
 [node name="DownloadButton" type="Button" parent="." unique_id=315804661]
-offset_left = 598.0
-offset_top = 1316.0
-offset_right = 774.0
-offset_bottom = 1405.0
+offset_left = 595.0
+offset_top = 1299.0
+offset_right = 923.0
+offset_bottom = 1388.0
 theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 30
 text = "SETTINGS_DOWNLOAD"
