@@ -14,32 +14,32 @@ game/
 - project.godot
 - icon.svg
 - assets/
-	- fonts/
-		- AlibabaPuHuiTi-3-65-Medium.ttf    # 阿里巴巴普惠体
-	- translation/
-		- trans.csv
+    - fonts/
+        - AlibabaPuHuiTi-3-65-Medium.ttf    # 阿里巴巴普惠体
+    - translation/
+        - trans.csv
 - scenes/
-	- menus/
-		- main_menu.tscn
-		- settings.tscn
-	- game/
-		- game.tscn
-		- card.tscn
+    - menus/
+        - main_menu.tscn
+        - settings.tscn
+    - game/
+        - game.tscn
+        - card.tscn
 - scripts/
-	- autoload/
-		- GameManager.gd        # 游戏管理
-		- DownloadManager.gd    # 下载管理
-		- MultiGame.gd          # 多人游戏功能
-		- SceneManager.gd       # 场景管理
-	- main_menu/
-		- main_menu.gd
-		- join_game_ui.gd
-		- create_game_ui.gd
-	- game/
-		- game.gd
-		- card.gd
-	- settings/
-		- settings.gd
+    - autoload/
+        - GameManager.gd        # 游戏管理
+        - DownloadManager.gd    # 下载管理
+        - MultiGame.gd          # 多人游戏功能
+        - SceneManager.gd       # 场景管理
+    - main_menu/
+        - main_menu.gd
+        - join_game_ui.gd
+        - create_game_ui.gd
+    - game/
+        - game.gd
+        - card.gd
+    - settings/
+        - settings.gd
 ```
 
 ## 如何运行
@@ -56,4 +56,4 @@ game/
 
 - 除连接了信号或 HTTPRequest、MultiplayerAPI 的函数外，任何函数都不应该以下划线（`_`）开头。
 
-- 函数之间只需间隔一行，无需间隔两行。
+- 函数之间既可间隔一行，也可间隔两行。建议间隔两行，部分间隔一行的函数为遗留问题。
