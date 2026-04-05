@@ -31,6 +31,7 @@ game/
         - DownloadManager.gd    # 下载管理
         - MultiGame.gd          # 多人游戏功能
         - SceneManager.gd       # 场景管理
+        - GameLoopManager.gd    # 游戏循环管理
     - main_menu/
         - main_menu.gd
         - join_game_ui.gd
@@ -46,6 +47,12 @@ game/
 
 请先运行数据后端，在游戏设置中输入后端 URL（包含端口号和 `http://` 或 `https://` 前缀），或者选择本地已有的数据源，然后创建游戏或加入游戏开始游玩。
 
+## 部分游戏逻辑介绍
+
+### 游戏循环
+
+游戏循环管理器（GameLoopManager.gd）负责游戏游戏循环的管理，其中不可避免地与多人游戏管理器（MultiGame.gd）交互与交叉。
+
 ## 最佳实践
 
 本项目目前正在使用 Godot 4.6.2 进行开发。开发用语言为 GDScript。
@@ -56,4 +63,4 @@ game/
 
 - 除连接了信号或 HTTPRequest、MultiplayerAPI 的函数外，任何函数都不应该以下划线（`_`）开头。
 
-- 函数之间既可间隔一行，也可间隔两行。建议间隔两行，部分间隔一行的函数为遗留问题。
+- 函数之间既可间隔一行，也可间隔两行。建议绑定 Godot 信号的函数间隔两行（自动空行），其余函数间隔一行，部分间隔一行的函数为遗留问题。

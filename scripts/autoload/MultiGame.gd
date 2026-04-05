@@ -2,7 +2,7 @@ extends Node
 
 const PORT: int = 8989
 const MAX_HAND_SIZE: int = 8
-const INITIAL_HP: int = 100
+const INITIAL_HP: int = 4
 const DEFAULT_DRAW_COUNT: int = 4
 const FIRST_ROUND_DRAW_COUNT: int = 3
 
@@ -19,7 +19,6 @@ var cards: Array[String] = []
 var my_card: Array[String] = []
 
 var server_round: int = 0
-var client_round: int = 0
 var game_started: bool = false
 
 func add_player(id: int) -> void:

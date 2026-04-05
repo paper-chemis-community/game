@@ -25,6 +25,7 @@ MultiGame="*res://scripts/autoload/MultiGame.gd"
 SceneManager="*res://scripts/autoload/SceneManager.gd"
 GameManager="*res://scripts/autoload/GameManager.gd"
 DownloadManager="*res://scripts/autoload/DownloadManager.gd"
+GameLoopManager="*uid://qxowgxfp4iwm"
 
 [display]
 
