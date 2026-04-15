@@ -130,18 +130,18 @@ theme_override_font_sizes/font_size = 30
 text = "SETTINGS_SAVESETTINGS"
 
 [node name="DownloadButton" type="Button" parent="." unique_id=315804661]
-offset_left = 595.0
-offset_top = 1299.0
-offset_right = 923.0
-offset_bottom = 1388.0
+offset_left = 554.0
+offset_top = 1309.0
+offset_right = 761.0
+offset_bottom = 1398.0
 theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 30
 text = "SETTINGS_DOWNLOAD"
 
 [node name="CancelButton" type="Button" parent="." unique_id=135993345]
-offset_left = 371.0
+offset_left = 347.0
 offset_top = 1305.0
-offset_right = 550.0
+offset_right = 581.0
 offset_bottom = 1394.0
 theme_override_fonts/font = ExtResource("2_6wm04")
 theme_override_font_sizes/font_size = 30

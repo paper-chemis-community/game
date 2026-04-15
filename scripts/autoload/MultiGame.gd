@@ -1,6 +1,6 @@
 extends Node
 
-const PORT: int = 8989
+var PORT: int = 8989
 const MAX_HAND_SIZE: int = 8
 const INITIAL_HP: int = 4
 const DEFAULT_DRAW_COUNT: int = 4
