@@ -3,16 +3,16 @@ extends Node
 var uuid: String
 
 func create_file(file_path: String) -> void:
-	var base_dir = file_path.get_base_dir()
+	var base_dir: String = file_path.get_base_dir()
 	if !DirAccess.dir_exists_absolute(base_dir):
 		DirAccess.make_dir_recursive_absolute(base_dir)
-	var file = FileAccess.open(file_path, FileAccess.WRITE)
+	var file: FileAccess = FileAccess.open(file_path, FileAccess.WRITE)
 	file.close()
 
 func download_file(server_path: String, local_path: String) -> void:
-	var http = HTTPRequest.new()
+	var http: HTTPRequest = HTTPRequest.new()
 	add_child(http)
-	var file_path = local_path
+	var file_path: String = local_path
 	if !FileAccess.file_exists(file_path):
 		create_file(file_path)
 	http.download_file = file_path
@@ -20,15 +20,15 @@ func download_file(server_path: String, local_path: String) -> void:
 	await http.request_completed
 
 func get_uuid() -> void:
-	var index_file = FileAccess.open("user://download/sources/temp/index.json", FileAccess.READ)
-	var index_text = index_file.get_as_text()
+	var index_file: FileAccess = FileAccess.open("user://download/sources/temp/index.json", FileAccess.READ)
+	var index_text: String = index_file.get_as_text()
 	var content = JSON.parse_string(index_text)
 	index_file.close()
 	uuid = content["uuid"]
 
 func download_defs(type: String, origin: String) -> void:
-	var list_file = FileAccess.open("user://download/sources/%s/%ss/list.json" % [uuid, type], FileAccess.READ)
-	var list_text = list_file.get_as_text()
+	var list_file: FileAccess = FileAccess.open("user://download/sources/%s/%ss/list.json" % [uuid, type], FileAccess.READ)
+	var list_text: String = list_file.get_as_text()
 	var list = JSON.parse_string(list_text)
 	list_file.close()
 	if !list:
@@ -38,8 +38,8 @@ func download_defs(type: String, origin: String) -> void:
 		await download_file("%s%s/id/%s" % [origin, type, k], "user://download/sources/%s/%ss/%s.json" % [uuid, type, filename])
 
 func download_assets(origin: String) -> void:
-	var list_file = FileAccess.open("user://download/sources/%s/assets/list.json" % [uuid], FileAccess.READ)
-	var list_text = list_file.get_as_text()
+	var list_file: FileAccess = FileAccess.open("user://download/sources/%s/assets/list.json" % [uuid], FileAccess.READ)
+	var list_text: String = list_file.get_as_text()
 	var list = JSON.parse_string(list_text)
 	list_file.close()
 	if !list:
@@ -52,8 +52,8 @@ func download_assets(origin: String) -> void:
 		await download_file("%sasset/sound/%s" % [origin, k], "user://download/sources/%s/assets/sounds/%s" % [uuid, filename])
 
 func download_from_origin() -> int:
-	var origin = GameManager.data_origin
-	var http = HTTPRequest.new()
+	var origin: String = GameManager.data_origin
+	var http: HTTPRequest = HTTPRequest.new()
 	add_child(http)
 
 	if origin.substr(0, 4) != "http":
@@ -89,20 +89,20 @@ func download_from_origin() -> int:
 	return 0
 
 func load_resource():
-	var card_file = FileAccess.open("user://download/sources/%s/cards/list.json" % [uuid], FileAccess.READ)
+	var card_file: FileAccess = FileAccess.open("user://download/sources/%s/cards/list.json" % [uuid], FileAccess.READ)
 	GameManager.card_list = JSON.parse_string(card_file.get_as_text())
 	card_file.close()
 
-	var reaction_file = FileAccess.open("user://download/sources/%s/reactions/list.json" % [uuid], FileAccess.READ)
+	var reaction_file: FileAccess = FileAccess.open("user://download/sources/%s/reactions/list.json" % [uuid], FileAccess.READ)
 	GameManager.reaction_list = JSON.parse_string(reaction_file.get_as_text())
 	reaction_file.close()
 
-	var matter_file = FileAccess.open("user://download/sources/%s/matters/list.json" % [uuid], FileAccess.READ)
+	var matter_file: FileAccess = FileAccess.open("user://download/sources/%s/matters/list.json" % [uuid], FileAccess.READ)
 	GameManager.matter_list = JSON.parse_string(matter_file.get_as_text())
 	matter_file.close()
 
-	var asset_file = FileAccess.open("user://download/sources/%s/assets/list.json" % [uuid], FileAccess.READ)
-	var asset_list = JSON.parse_string(asset_file.get_as_text())
+	var asset_file: FileAccess = FileAccess.open("user://download/sources/%s/assets/list.json" % [uuid], FileAccess.READ)
+	var asset_list: Dictionary = JSON.parse_string(asset_file.get_as_text())
 	GameManager.pic_list = asset_list["pics"]
 	GameManager.sound_list = asset_list["sounds"]
 	asset_file.close()
@@ -110,13 +110,13 @@ func load_resource():
 func get_sources():
 	if !DirAccess.dir_exists_absolute("user://download/sources/"):
 		DirAccess.make_dir_recursive_absolute("user://download/sources/")
-	var dir = DirAccess.open("user://download/sources/")
+	var dir: DirAccess = DirAccess.open("user://download/sources/")
 	var subdirs: PackedStringArray = dir.get_directories()
 	for subdir in subdirs:
 		if subdir == "temp":
 			continue
-		var file = FileAccess.open("user://download/sources/%s/index.json" % [subdir], FileAccess.READ)
-		var text = file.get_as_text()
+		var file: FileAccess = FileAccess.open("user://download/sources/%s/index.json" % [subdir], FileAccess.READ)
+		var text: String = file.get_as_text()
 		var content = JSON.parse_string(text)
 		file.close()
 		var source_name = content["name"]

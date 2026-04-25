@@ -5,7 +5,7 @@ var type: String
 var card_name: String
 
 func set_texture(pic: String) -> void:
-	var image = Image.new()
+	var image: Image = Image.new()
 	image.load(pic)
 	$Sprite.texture = ImageTexture.create_from_image(image)
 
