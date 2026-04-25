@@ -9,6 +9,7 @@ func create_file(file_path: String) -> void:
 	var file: FileAccess = FileAccess.open(file_path, FileAccess.WRITE)
 	file.close()
 
+
 func download_file(server_path: String, local_path: String) -> void:
 	var http: HTTPRequest = HTTPRequest.new()
 	add_child(http)
@@ -19,12 +20,14 @@ func download_file(server_path: String, local_path: String) -> void:
 	http.request(server_path)
 	await http.request_completed
 
+
 func get_uuid() -> void:
 	var index_file: FileAccess = FileAccess.open("user://download/sources/temp/index.json", FileAccess.READ)
 	var index_text: String = index_file.get_as_text()
 	var content = JSON.parse_string(index_text)
 	index_file.close()
 	uuid = content["uuid"]
+
 
 func download_defs(type: String, origin: String) -> void:
 	var list_file: FileAccess = FileAccess.open("user://download/sources/%s/%ss/list.json" % [uuid, type], FileAccess.READ)
@@ -36,6 +39,7 @@ func download_defs(type: String, origin: String) -> void:
 	for k in list:
 		var filename = list[k]
 		await download_file("%s%s/id/%s" % [origin, type, k], "user://download/sources/%s/%ss/%s.json" % [uuid, type, filename])
+
 
 func download_assets(origin: String) -> void:
 	var list_file: FileAccess = FileAccess.open("user://download/sources/%s/assets/list.json" % [uuid], FileAccess.READ)
@@ -50,6 +54,7 @@ func download_assets(origin: String) -> void:
 	for k in list["sounds"]:
 		var filename = list["sounds"][k]
 		await download_file("%sasset/sound/%s" % [origin, k], "user://download/sources/%s/assets/sounds/%s" % [uuid, filename])
+
 
 func download_from_origin() -> int:
 	var origin: String = GameManager.data_origin
@@ -88,6 +93,7 @@ func download_from_origin() -> int:
 
 	return 0
 
+
 func load_resource():
 	var card_file: FileAccess = FileAccess.open("user://download/sources/%s/cards/list.json" % [uuid], FileAccess.READ)
 	GameManager.card_list = JSON.parse_string(card_file.get_as_text())
@@ -106,6 +112,7 @@ func load_resource():
 	GameManager.pic_list = asset_list["pics"]
 	GameManager.sound_list = asset_list["sounds"]
 	asset_file.close()
+
 
 func get_sources():
 	if !DirAccess.dir_exists_absolute("user://download/sources/"):

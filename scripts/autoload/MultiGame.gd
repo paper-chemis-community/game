@@ -29,12 +29,14 @@ func add_player(id: int) -> void:
 	player_turns[id] = 0
 	player_hp[id] = INITIAL_HP
 
+
 func remove_player(id: int) -> void:
 	if not players.has(id):
 		return
 	players.erase(id)
 	for dict in [player_cards, player_turns, player_hp, player_username]:
 		dict.erase(id)
+
 
 func create_server(playern: int) -> void:
 	max_players = playern
@@ -43,23 +45,28 @@ func create_server(playern: int) -> void:
 	_setup_multiplayer()
 	add_player(1)
 
+
 func create_client(ip: String) -> void:
 	if peer.create_client(ip, PORT) != OK:
 		return
 	_setup_multiplayer()
+
 
 func _setup_multiplayer() -> void:
 	multiplayer.multiplayer_peer = peer
 	multiplayer.peer_connected.connect(_on_peer_connected)
 	multiplayer.peer_disconnected.connect(_on_peer_disconnected)
 
+
 func _on_peer_connected(id: int) -> void:
 	add_player(id)
 	sync_players.rpc()
 
+
 func _on_peer_disconnected(id: int) -> void:
 	remove_player(id)
 	sync_players.rpc()
+
 
 func start_game() -> void:
 	if not multiplayer.is_server() or players.size() != max_players:
@@ -69,6 +76,7 @@ func start_game() -> void:
 	deal_cards()
 	sync_game_state.rpc()
 
+
 func extract() -> String:
 	if cards.is_empty():
 		return ""
@@ -77,9 +85,11 @@ func extract() -> String:
 	cards.remove_at(index)
 	return card
 
+
 func deal_cards() -> void:
 	for player_id in players:
 		_draw_cards(player_id, MAX_HAND_SIZE)
+
 
 func next_round() -> void:
 	if not multiplayer.is_server():
@@ -88,12 +98,14 @@ func next_round() -> void:
 	server_round += 1
 	sync_game_state.rpc()
 
+
 func settle_round() -> void:
 	for player_id in players:
 		var draw_count := DEFAULT_DRAW_COUNT
 		if server_round == 1 and player_turns.get(player_id, -1) <= 1:
 			draw_count = FIRST_ROUND_DRAW_COUNT
 		_draw_cards(player_id, draw_count)
+
 
 func _draw_cards(player_id: int, count: int) -> void:
 	if not player_cards.has(player_id):
@@ -107,17 +119,21 @@ func _draw_cards(player_id: int, count: int) -> void:
 			break
 		hand.append(card)
 
+
 func get_my_cards() -> void:
 	request_cards.rpc_id(1)
+
 
 @rpc("any_peer", "call_remote", "reliable")
 func request_cards() -> void:
 	var sender_id := multiplayer.get_remote_sender_id()
 	send_cards.rpc_id(sender_id, player_cards.get(sender_id, []))
 
+
 @rpc("authority", "call_remote", "reliable")
 func send_cards(data: Array) -> void:
 	my_card = data
+
 
 func sync_game_state() -> void:
 	if not multiplayer.is_server():
@@ -131,6 +147,7 @@ func sync_game_state() -> void:
 		game_started = game_started
 	})
 
+
 @rpc("authority", "call_remote", "reliable")
 func sync_game_state_rpc(data: Dictionary) -> void:
 	cards = data.cards
@@ -140,6 +157,7 @@ func sync_game_state_rpc(data: Dictionary) -> void:
 	server_round = data.server_round
 	game_started = data.game_started
 
+
 func sync_players() -> void:
 	if not multiplayer.is_server():
 		return
@@ -148,6 +166,7 @@ func sync_players() -> void:
 		player_username = player_username,
 		player_hp = player_hp
 	})
+
 
 @rpc("authority", "call_remote", "reliable")
 func sync_players_rpc(data: Dictionary) -> void:

@@ -10,6 +10,7 @@ func _ready() -> void:
 	card.set_pos(300, 300)
 	print(card.get_pos())
 
+
 func init() -> void:
 	# 设置 UI 展示文本
 	if multiplayer.is_server():
