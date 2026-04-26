@@ -2,7 +2,7 @@ extends Node
 
 var current_scene = null
 
-var Card = ResourceLoader.load("res://scenes/game/card.tscn")
+var Card: Resource = ResourceLoader.load("res://scenes/game/card.tscn")
 
 func _ready():
 	var root: Window = get_tree().root

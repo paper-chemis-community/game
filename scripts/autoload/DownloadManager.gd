@@ -120,7 +120,7 @@ func get_sources():
 	var dir: DirAccess = DirAccess.open("user://download/sources/")
 	var subdirs: PackedStringArray = dir.get_directories()
 	for subdir in subdirs:
-		if subdir == "temp":
+		if subdir as String == "temp":
 			continue
 		var file: FileAccess = FileAccess.open("user://download/sources/%s/index.json" % [subdir], FileAccess.READ)
 		var text: String = file.get_as_text()
