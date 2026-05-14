@@ -29,7 +29,6 @@ game/
     - autoload/
         - GameManager.gd        # 游戏管理
         - DownloadManager.gd    # 下载管理
-        - MultiGame.gd          # 多人游戏功能
         - SceneManager.gd       # 场景管理
         - GameLoopManager.gd    # 游戏循环管理
     - main_menu/
@@ -51,7 +50,7 @@ game/
 
 ### 游戏循环
 
-游戏循环管理器（GameLoopManager.gd）负责游戏游戏循环的管理，其中不可避免地与多人游戏管理器（MultiGame.gd）交互与交叉。
+游戏循环管理器（GameLoopManager.gd）负责游戏游戏循环的管理。
 
 ## 最佳实践
 
