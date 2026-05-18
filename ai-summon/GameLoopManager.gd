@@ -1,6 +1,6 @@
 ﻿extends Node
 
-var peer: ENetMultiplayerPeer = ENetMultiplayer.new()
+var peer: ENetMultiplayerPeer = ENetMultiplayerPeer.new()
 
 var max_player_num: int
 var player_num: int

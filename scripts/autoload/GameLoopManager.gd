@@ -39,3 +39,7 @@ func add_player(id: int) -> void:
 
 func remove_player(id: int) -> void:
 	pass
+
+
+func start_game() -> void:
+	pass
