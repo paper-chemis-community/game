@@ -1,8 +1,10 @@
 extends Node2D
 
+
 func _ready() -> void:
 	init_sources()
 	init_text()
+
 
 func init_text() -> void:
 	$DataSetting/LineEdit.text = GameManager.data_origin
@@ -10,10 +12,12 @@ func init_text() -> void:
 	$UsernameSetting/LineEdit.text = GameManager.username
 	$LoadSource/ChooseSource.select(GameManager.source)
 
+
 func init_sources() -> void:
 	DownloadManager.get_sources()
 	for source_name in GameManager.sources:
 		$LoadSource/ChooseSource.add_item(source_name)
+
 
 func _on_save_button_pressed() -> void:
 	GameManager.data_origin = $DataSetting/LineEdit.text
@@ -41,7 +45,6 @@ func _on_download_button_pressed() -> void:
 	DownloadManager.load_resource()
 	$Tips.text = "SETTINGS_TIP_LOADED"
 	
-
 
 func _on_load_button_pressed() -> void:
 	if GameManager.sources.size() == 0 or GameManager.source == -1:

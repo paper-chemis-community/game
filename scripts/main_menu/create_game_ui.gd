@@ -1,9 +1,9 @@
 extends Node2D
 
 func _on_create_game_button_pressed() -> void:
-	var player_num = int($CreateGameEdit.text)
+	var player_num: int = int($CreateGameEdit.text)
 	if 2 <= player_num and player_num <= 4:
-		MultiGame.create_server(int(player_num))
+		GameLoopManager.create_server(int(player_num))
 		$".".hide()
 		SceneManager.goto_scene("game/game")
 	else:
